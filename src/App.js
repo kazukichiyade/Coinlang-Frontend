@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Link, Redirect, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch, Redirect, withRouter } from 'react-router-dom';
 import Home from '../src/component/PageHome';
 import Login from '../src/component/PageLogin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div>
-        <div>
-          <Link to="/">Coinlang</Link>
-          <Link to="/login">LOGIN</Link>
-        </div>
-        <Route exact path="/" render={() => <Home />} />
-        <Route exact path="/login" render={() => <Login />} />
-      </div>
-    </BrowserRouter>
+    <MuiThemeProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </BrowserRouter>
+    </MuiThemeProvider>
   );
 };
 
