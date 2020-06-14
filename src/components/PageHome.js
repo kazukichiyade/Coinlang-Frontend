@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -15,13 +15,26 @@ const StyledButton = styled(Button)`
 `;
 
 const Home = () => {
+  const [bitCoin, setBitCoin] = useState([]);
+
   useEffect(() => {
-    const getBitCoin = async () => {
-      const response = await axios.get('https://public.bitbank.cc/xrp_jpy/ticker');
+    console.log('Effect');
+    axios.get('http://localhost:9000').then((response) => {
       console.log(response.data);
-    };
-    getBitCoin();
+      setBitCoin(response.data);
+      console.log({ bitCoin });
+    });
   }, []);
+
+  // useEffect(() => {
+  //   console.log('effect');
+  //   const getBitCoin = async () => {
+  //     const response = await axios.get('https://public.bitbank.cc/xrp_jpy/ticker');
+  //     console.log(response.data);
+  //     setCoins(response.data);
+  //   };
+  //   getBitCoin();
+  // }, []);
 
   return (
     <div>

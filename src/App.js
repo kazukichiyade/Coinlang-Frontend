@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Link, Switch, Redirect, withRouter } from 'react-router-dom';
-import Home from '../src/components/PageHome';
-import Login from '../src/components/PageLogin';
+
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 
@@ -12,10 +11,7 @@ const App = () => {
     <MuiThemeProvider>
       <BrowserRouter>
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
+
         <Footer />
       </BrowserRouter>
     </MuiThemeProvider>
