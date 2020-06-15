@@ -22,7 +22,6 @@ const Home = () => {
     axios.get('http://localhost:9000').then((response) => {
       console.log(response.data);
       setBitCoin(response.data);
-      console.log({ bitCoin });
     });
   }, []);
 
@@ -44,6 +43,7 @@ const Home = () => {
       <StyledButton>
         <Link to="/login">LOGIN</Link>
       </StyledButton>
+      <span>product_code: {bitCoin.product_code}</span>
     </div>
   );
 };
