@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
+import CoinType from '../components/CoinType';
+
 const StyledButton = styled(Button)`
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   border-radius: 3px;
@@ -25,16 +27,6 @@ const Home = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   console.log('effect');
-  //   const getBitCoin = async () => {
-  //     const response = await axios.get('https://public.bitbank.cc/xrp_jpy/ticker');
-  //     console.log(response.data);
-  //     setCoins(response.data);
-  //   };
-  //   getBitCoin();
-  // }, []);
-
   return (
     <div>
       <StyledButton>
@@ -43,7 +35,8 @@ const Home = () => {
       <StyledButton>
         <Link to="/login">LOGIN</Link>
       </StyledButton>
-      <span>product_code: {bitCoin.product_code}</span>
+      {/* Coin名表示 */}
+      <CoinType coin={bitCoin} />
     </div>
   );
 };
