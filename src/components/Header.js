@@ -17,11 +17,10 @@ const Header = () => {
   return (
     <Flex>
       <HeaderStyle>coinlang</HeaderStyle>
-      <div>Header</div>
-      <Switch>
+      {/* <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
-      </Switch>
+      </Switch> */}
     </Flex>
   );
 };

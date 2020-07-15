@@ -29,18 +29,18 @@ const Home = () => {
 
   return (
     <div>
-      <StyledButton>
+      {/* <StyledButton>
         <Link to="/">Coinlang</Link>
       </StyledButton>
       <StyledButton>
         <Link to="/login">LOGIN</Link>
-      </StyledButton>
+      </StyledButton> */}
       {/* Coin名表示 */}
       <CoinType coin={bitCoin} />
       <span> BID(売) {bitCoin.best_bid}</span>
       <span> ASK(買) {bitCoin.best_ask}</span>
       <span> LTP(最終取引価格) {bitCoin.ltp}</span>
-      <span>{bitCoin.timestamp}</span>
+      <span> 時間 {bitCoin.timestamp}</span>
     </div>
   );
 };
