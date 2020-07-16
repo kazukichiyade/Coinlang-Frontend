@@ -6,7 +6,10 @@ import { Route, Switch } from 'react-router-dom';
 
 const HeaderStyle = styled.div`
   color: orange;
-  margin-right: 10px;
+`;
+
+const HeaderMain = styled.header`
+  background-color: #08a6ff;
 `;
 
 const Flex = styled.div`
@@ -15,13 +18,9 @@ const Flex = styled.div`
 
 const Header = () => {
   return (
-    <Flex>
+    <HeaderMain>
       <HeaderStyle>coinlang</HeaderStyle>
-      {/* <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-      </Switch> */}
-    </Flex>
+    </HeaderMain>
   );
 };
 

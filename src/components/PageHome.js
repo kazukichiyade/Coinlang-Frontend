@@ -16,6 +16,10 @@ const StyledButton = styled(Button)`
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
 `;
 
+const Flex = styled.div`
+  display: flex;
+`;
+
 const Home = () => {
   const [bitCoin, setBitCoin] = useState([]);
 
@@ -36,11 +40,15 @@ const Home = () => {
         <Link to="/login">LOGIN</Link>
       </StyledButton> */}
       {/* Coin名表示 */}
-      <CoinType coin={bitCoin} />
-      <span> BID(売) {bitCoin.best_bid}</span>
-      <span> ASK(買) {bitCoin.best_ask}</span>
-      <span> LTP(最終取引価格) {bitCoin.ltp}</span>
-      <span> 時間 {bitCoin.timestamp}</span>
+      <Flex>
+        <span>
+          <CoinType coin={bitCoin} />
+        </span>
+        <span> BID(売) {bitCoin.best_bid}</span>
+        <span> ASK(買) {bitCoin.best_ask}</span>
+        <span> LTP(最終取引価格) {bitCoin.ltp}</span>
+        <span> 時間 {bitCoin.timestamp}</span>
+      </Flex>
     </div>
   );
 };
