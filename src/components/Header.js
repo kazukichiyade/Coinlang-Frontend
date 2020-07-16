@@ -4,16 +4,21 @@ import Home from './PageHome';
 import Login from './PageLogin';
 import { Route, Switch } from 'react-router-dom';
 
-const HeaderStyle = styled.div`
-  color: orange;
-`;
-
 const HeaderMain = styled.header`
-  background-color: #08a6ff;
+  width: 100%;
+  ${'' /* background-color: #363636; */}
+  ${'' /* background-color: #3282b8; */}
+  background-color: #4CB5F5;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute; /*←絶対位置*/
+  top: 0; /*上に固定*/
+  display: flex;
 `;
 
-const Flex = styled.div`
-  display: flex;
+const HeaderStyle = styled.div`
+  color: #f4f6ff;
 `;
 
 const Header = () => {
