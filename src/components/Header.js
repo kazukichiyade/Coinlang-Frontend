@@ -19,6 +19,7 @@ const HeaderMain = styled.header`
 
 const HeaderStyle = styled.div`
   color: #f4f6ff;
+  margin-left: 10px;
 `;
 
 const Header = () => {

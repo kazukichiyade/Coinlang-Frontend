@@ -16,8 +16,41 @@ const StyledButton = styled(Button)`
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
 `;
 
-const Flex = styled.div`
+const Coin = styled.div`
+  margin-top: 60px;
+  margin-left: 30px;
+  max-width: 185px;
+`;
+
+const Name = styled.div`
+  text-align: center;
+  font-size: 25px;
+`;
+
+const BID = styled.div`
   display: flex;
+  flex-direction: column;
+  text-align: center;
+`;
+
+const ASK = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+`;
+
+const LTP = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 10px;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex: row;
 `;
 
 const Home = () => {
@@ -40,15 +73,27 @@ const Home = () => {
         <Link to="/login">LOGIN</Link>
       </StyledButton> */}
       {/* Coin名表示 */}
-      <Flex>
-        <span>
+      <Coin>
+        <Name>
           <CoinType coin={bitCoin} />
-        </span>
-        <span> BID(売) {bitCoin.best_bid}</span>
-        <span> ASK(買) {bitCoin.best_ask}</span>
-        <span> LTP(最終取引価格) {bitCoin.ltp}</span>
-        <span> 時間 {bitCoin.timestamp}</span>
-      </Flex>
+        </Name>
+        <Row>
+          <BID>
+            <span>BID(売)</span>
+            <span>{bitCoin.best_bid}</span>
+          </BID>
+          <LTP>
+            <span>LTP</span>
+            <span>{bitCoin.ltp}</span>
+          </LTP>
+          <ASK>
+            <span>ASK(買)</span>
+            <span>{bitCoin.best_ask}</span>
+          </ASK>
+        </Row>
+
+        {/* <span> 時間 {bitCoin.timestamp}</span> */}
+      </Coin>
     </div>
   );
 };
